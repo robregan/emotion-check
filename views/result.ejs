@@ -12,7 +12,7 @@
   <body>
      
     <img src='<%= img%>' alt='Hot dog'> 
-   <% if(data) { %>
+   <% if(emotions.length>0) { %>
     <ul>
       <li>Anger: <%= (data.anger * 100).toFixed(1) %>%</li>
       <li>Contempt: <%= (data.contempt * 100).toFixed(1) %>%</li>
@@ -23,7 +23,7 @@
       <li>Sadness: <%= (data.sadness * 100).toFixed(1) %>%</li>
       <li>Surprise: <%= (data.surprise * 100).toFixed(1) %>%  </li>
     </ul>
-    <% }else{ %>
+    <% }else { %>
       <h1>No faces detected!</h1>
       <% } %>
 

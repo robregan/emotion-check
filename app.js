@@ -60,6 +60,8 @@ app.post("/", upload.single("file-to-upload"), async (req, res) => {
     const result = await cloudinary.uploader.upload(req.file.path);
     const imageUrl = result.secure_url;
 
+   
+
     axios({
       method: "post",
       url: faceEndpoint,
@@ -88,7 +90,7 @@ app.post("/", upload.single("file-to-upload"), async (req, res) => {
         console.log(error);
       });
   } catch (err) {
-    res.redirect('/')
+
     console.log(err);
   }
 });
