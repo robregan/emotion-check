@@ -12,7 +12,7 @@
   <body>
      
     <img src='<%= img%>' alt='Hot dog'> 
-   <% if(data.length > 0) { %>
+   <% if(data) { %>
     <ul>
       <li>Anger: <%= (data.anger * 100).toFixed(1) %>%</li>
       <li>Contempt: <%= (data.contempt * 100).toFixed(1) %>%</li>
