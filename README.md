@@ -1,3 +1,7 @@
+# Using Azure's cognitive services (computer vision and Face api) users can upload a photo and have their emotions analyzed!
+  - live version: https://emotion-check.herokuapp.com/
+
+
 # Install
 
 `npm install`
