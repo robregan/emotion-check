@@ -11,7 +11,12 @@
   </head>
   <body>
      
-    <h1>Please upload an image below and we will analyze the emotion!</h1>
+  
+    <img src='<%= img%>' alt='Hot dog'> 
+
+      <h2>no face detected!</h2>
+    
+
     <form action="/" enctype="multipart/form-data" method="post">
       <input type="file" name="file-to-upload">
       <input type="submit" value="Upload">

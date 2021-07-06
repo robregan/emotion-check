@@ -59,9 +59,6 @@ app.post("/", upload.single("file-to-upload"), async (req, res) => {
     // Upload image to cloudinary
     const result = await cloudinary.uploader.upload(req.file.path);
     const imageUrl = result.secure_url;
-
-   
-
     axios({
       method: "post",
       url: faceEndpoint,
@@ -77,20 +74,20 @@ app.post("/", upload.single("file-to-upload"), async (req, res) => {
       headers: { "Ocp-Apim-Subscription-Key": subscriptionKey },
     })
       .then(function (response) {
-        console.log("Status text: " + response.status);
-        console.log("Status text: " + response.statusText);
-        console.log(response.data[0]);
+        // console.log("Status text: " + response.status);
+        // console.log("Status text: " + response.statusText);
+        console.log(response.data)
         res.render("result.ejs", {
-          data: response.data[0].faceAttributes.emotion,
+          data: response.data.length ? response.data[0].faceAttributes.emotion : null,
           img: imageUrl,
         });
       })
       .catch(function (error) {
-        res.redirect('/')
+    //    res.redirect('/')
         console.log(error);
       });
   } catch (err) {
-
+    res.redirect('/')
     console.log(err);
   }
 });

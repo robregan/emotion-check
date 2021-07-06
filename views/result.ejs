@@ -11,8 +11,12 @@
   </head>
   <body>
      
-    <img src='<%= img%>' alt='Hot dog'> 
   
+ <% if (!data) { %>
+  <img src='<%= img%>' alt='Hot dog'> 
+  <h2>no face detected</h2>
+  <% } else { %>
+    <img src='<%= img%>' alt='Hot dog'>
     <ul>
       <li>Anger: <%= (data.anger * 100).toFixed(1) %>%</li>
       <li>Contempt: <%= (data.contempt * 100).toFixed(1) %>%</li>
@@ -21,10 +25,11 @@
       <li>Happiness: <%= (data.happiness *100).toFixed(1) %>%</li>
       <li>Neutral: <%= (data.neutral * 100).toFixed(1) %>%</li>
       <li>Sadness: <%= (data.sadness * 100).toFixed(1) %>%</li>
-      <li>Surprise: <%= (data.surprise * 100).toFixed(1) %>%  </li>
+      <li>Surprise: <%= (data.surprise * 100).toFixed(1) %>%</li>
     </ul>
+    <% } %>
 
-
+  
     <form action="/" enctype="multipart/form-data" method="post">
       <input type="file" name="file-to-upload">
       <input type="submit" value="Upload">
