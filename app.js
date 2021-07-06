@@ -83,7 +83,7 @@ app.post("/", upload.single("file-to-upload"), async (req, res) => {
         });
       })
       .catch(function (error) {
-    //    res.redirect('/')
+       res.redirect('/')
         console.log(error);
       });
   } catch (err) {
