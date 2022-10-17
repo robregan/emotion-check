@@ -11,7 +11,12 @@ form{
     text-align: center;
 }
 body{
-    background: cornflowerblue;
+    background: lightseagreen;
     text-align: center;
-    font-family: 'Architects Daughter', cursive;
+    font-family: 'Silkscreen', cursive;
+}
+.bella{
+    width: 70%;
+    margin: 0 auto;
+    margin-bottom: 2rem;;
 }
